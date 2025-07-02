@@ -1,0 +1,160 @@
+body { margin: 0; overflow: hidden; background: black; font-family: Arial, sans-serif; }
+canvas { display: block; }
+
+@font-face {
+font-family: 'Dune'; 
+src: url('./assets/fonts/Dune_Rise.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Series'; 
+src: url('./assets/fonts/the_Series.otf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+.corner-button {
+    position: fixed;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid white;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Dune', Arial, sans-serif;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    font-size: 16px;
+    max-width: 180px;
+    text-align: center;
+}
+
+#btn-top-left { top: 80px; left: 25%; transform: translateX(-50%); }
+#btn-top-right { top: 80px; left: 75%; transform: translateX(-50%); }
+#btn-bottom-left { bottom: 80px; left: 25%; transform: translateX(-50%); }
+#btn-bottom-right { bottom: 80px; left: 75%; transform: translateX(-50%); }
+
+.corner-button:hover {
+    background: white;
+    color: black;
+}
+
+.animated-text {
+    position: fixed;
+    color: white;
+    font-family: 'Dune', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.5s ease;
+    z-index: 1100;
+    white-space: nowrap;
+}
+
+#animated-text-top-left { top: 40px; left: 40px; }
+#animated-text-top-right { top: 40px; right: 40px; }
+#animated-text-bottom-left { bottom: 40px; left: 40px; }
+#animated-text-bottom-right { bottom: 40px; right: 40px; }
+
+.back-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid white;
+    color: white;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0,0,0,0.3);
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.back-button:hover {
+    background: white;
+    color: black;
+}
+
+/* ----------- GALERİ STİLLERİ ----------- */
+
+#gallery-container {
+position: fixed;
+top: 140px; /* 100px + buton yüksekliği kadar margin */
+left: 40px;
+right: 40px;
+background-color: transparent;
+padding: 2rem;
+overflow-y: scroll;
+z-index: 1200;
+display: none;
+box-sizing: border-box;
+max-height: calc(100vh - 160px); /* Alt tarafa taşmasın diye */
+}
+
+#gallery-container::-webkit-scrollbar {
+width: 5px;
+}
+
+#gallery-container::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.05);
+border-radius: 5px;
+}
+
+#gallery-container::-webkit-scrollbar-thumb {
+background: rgba(255, 255, 255, 0.2);
+border-radius: 5px;
+transition: background 0.7s;
+}
+
+#gallery-container::-webkit-scrollbar-thumb:hover {
+background: rgb(255, 255, 255);
+}
+
+#gallery-container h1 {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    padding-bottom: 3rem;
+    color: #1a1a1a;
+    margin: 0 0 2rem 0;
+}
+
+.gallery-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 2rem;
+}
+
+.gallery-wrap .item {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 8px;
+    box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.315);
+    cursor: pointer;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.gallery-wrap .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0.5rem 0.7rem 1rem rgba(255, 255, 255, 0.281);
+}
+

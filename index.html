@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8" />
+  <title>Anıl YETİM</title>
+</head>
+<body>
+
+  <button id="btn-top-left" class="corner-button">Portfolio</button>
+  <button id="btn-top-right" class="corner-button">About Me</button>
+  <button id="btn-bottom-left" class="corner-button">Contact</button>
+  <button id="btn-bottom-right" class="corner-button">Core Skills</button>
+
+  <div id="animated-text-top-left" class="animated-text">
+    Portfolio <div class="back-button" data-back="btn-top-left">&lt;</div>
+  </div>
+  <div id="animated-text-top-right" class="animated-text">
+    About Me <div class="back-button" data-back="btn-top-right">&lt;</div>
+  </div>
+  <div id="animated-text-bottom-left" class="animated-text">
+    Contact <div class="back-button" data-back="btn-bottom-left">&lt;</div>
+  </div>
+  <div id="animated-text-bottom-right" class="animated-text">
+    Core Skills <div class="back-button" data-back="btn-bottom-right">&lt;</div>
+  </div>
+
+  <div id="about-me-text" style="
+  position: fixed;
+  top: 240px;
+  left: 120px;
+  max-width: 600px;
+  color: white;
+  font-family: 'Series', Arial, sans-serif;
+  font-size: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+  z-index: 1200;
+">
+  I'm Anil. Just a tech-loving guy trying to develop my own apps and games, and also curious about cybersecurity. I'm 20 years old and have been into technology since I was a little kid. I've messed around with my computer a lot. Sometimes breaking it, sometimes fixing it. Now, I just want to do my best to help others with their tech problems.
+</div>
+
+
+  <!-- GALERİ KONTEYNERİ -->
+  <div id="gallery-container" aria-label="Portfolio Gallery" role="region" tabindex="0" >
+    <div class="gallery-wrap" id="gallery-wrap">
+      <!-- Görseller JS ile buraya yüklenecek -->
+    </div>
+    
+  </div>
+
+</body>
+<script type="module" src="./script.js">  
+</script>
+</html>
